@@ -19,11 +19,11 @@
       :items="sidebarItems"
       @toggle-sidebar="toggleSidebar"
     >
-      <template #top>
+      <!-- <template #top>
         <div :style="{ paddingLeft: '1.5rem' }">
           <QR />
         </div>
-      </template>
+      </template> -->
       <slot
         name="sidebar-bottom"
         #bottom
@@ -38,8 +38,9 @@
       :sidebar-items="sidebarItems"
     >
       <template #top>
-        <div :style="{ marginBottom: '-5rem' }" class="theme-default-content" v-if="$page.frontmatter.thumbnail">
-          <img :src="$page.frontmatter.thumbnail">
+        <div :style="{ marginBottom: '-5rem' }" class="theme-default-content">
+          <Bar/>
+          <img :src="$page.frontmatter.thumbnail" v-if="$page.frontmatter.thumbnail">
         </div>
       </template>
       <!-- <slot
